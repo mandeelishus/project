@@ -1,0 +1,23 @@
+>> Build docker image
+sudo docker build -t mandeelishus/techtrends .
+
+>> Run a docker container
+sudo docker run -d -p 7111:3111 --name techtrends mandeelishus/techtrends
+
+>> Check container logs
+sudo docker logs -f techtrends
+
+>> Logs
+* Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [12/Sep/2021 20:57:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [12/Sep/2021 20:57:54] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [12/Sep/2021 20:57:54] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [12/Sep/2021 20:58:25] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [12/Sep/2021 20:59:04] "GET / HTTP/1.1" 200 -
+INFO:root:Article "KubeCon + CloudNativeCon 2021" retrieved!
+INFO:werkzeug:172.17.0.1 - - [12/Sep/2021 21:11:19] "GET /2 HTTP/1.1" 200 -
