@@ -8,7 +8,7 @@ service:
   type: ClusterIP
 
 image:
-  repository: <your-github-username>/techtrends
+  repository: <your-github-mandeelishus/techtrends
   tag: latest
   pullPolicy: IfNotPresent
 

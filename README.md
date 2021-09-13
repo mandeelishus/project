@@ -60,9 +60,7 @@ Check the availability with `kubectl get node`.
 Apply the *kubernetes/namespace.yaml*, *kubernetes/deploy.yaml* and *kubernetes/service.yaml* for local/sandbox namespace.
 
 ```shell
-$ kubectl apply -f namespace.yaml
-$ kubectl apply -f deploy.yaml
-$ kubectl apply -f service.yaml
+$ kubectl apply -f .
 ```
 
 Check the resources created for the *sandbox* namespace:
@@ -70,17 +68,17 @@ Check the resources created for the *sandbox* namespace:
 ```shell
 $ kubectl get all -n sandbox
 
-NAME                              READY   STATUS    RESTARTS   AGE
-pod/techtrends-577bd4f766-nmchn   1/1     Running   1          44h
+NAME                              READY   STATUS                 RESTARTS   AGE
+pod/techtrends-687f49d569-rg6br   0/1     CreateContainerError   0          39s
 
-NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
-service/techtrends   ClusterIP   10.43.170.37   <none>        4111/TCP   44h
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/techtrends   ClusterIP   10.43.248.171   <none>        4111/TCP   62s
 
 NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/techtrends   1/1     1            1           44h
+deployment.apps/techtrends   0/1     1            0           39s
 
 NAME                                    DESIRED   CURRENT   READY   AGE
-replicaset.apps/techtrends-577bd4f766   1         1         1       44h
+replicaset.apps/techtrends-687f49d569   1         1         0       39s
 ```
 
 Test the service from cluster ip:
